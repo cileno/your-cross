@@ -36,3 +36,24 @@ mkdocstrings-python = "^1.16.11"
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+pythonpath = "."
+addopts = "--doctest-modules"
+
+
+[tool.black]
+line-length = 79
+target-version = ["py312"]
+
+[tool.isort]
+profile = "black"
+
+[tool.taskipy.tasks]
+runserver = "python your_cross/manage.py runserver"
+streamlit = "streamlit run streamlit_app/Home.py"
+lint = "blue --check --diff . && isort --check --diff ."
+docs = "mkdocs serve"
+pre_test = "task lint"
+test = "pytest -s -x --cov=your_cross -vv"
+post_test = "coverage html"
