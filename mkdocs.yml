@@ -1,0 +1,28 @@
+site_name: Your Cross Docs
+repo_url: https://github.com/cileno/your-cross
+repo_name: cileno/your-cross
+edit_uri: tree/main/docs
+
+theme:
+  name: material
+  language: pt-BR
+  logo: assets/logo.png
+  favicon: assets/logo.png
+
+nav:
+  - Home: index.md
+  - API: api.md
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            docstring_style: google
+
+markdown_extensions:
+  - attr_list
+
+extra_css:
+  - stylesheets/extra.css
