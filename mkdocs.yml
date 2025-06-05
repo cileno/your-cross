@@ -1,0 +1,73 @@
+# Gerar um arquivo mkdocs.yml válido e corrigido no formato correto
+site_name: Your Cross
+site_url: https://your-cross.localhost/
+repo_url: https://github.com/cileno/your-cross # https://github.com/seu-usuario/your-cross 
+repo_name: cileno/your-cross  # GitHub
+site_author: Paudercley Cileno
+site_description: Sistema Web para Gestão de Academia de Crossfit
+
+theme:
+  name: material
+  language: pt-BR
+  logo: assets/logo.png
+  favicon: assets/logo.png
+  features:
+    - navigation.tabs
+    - navigation.indexes
+    - navigation.expand
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep orange
+      accent: amber
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep orange
+      accent: amber
+  icon:
+    repo: fontawesome/brands/github
+
+nav:
+  - Início: index.md
+  - Guia de Uso:
+      - Como instalar: guia/instalacao.md
+      - Comandos úteis: guia/comandos.md
+  - Documentação Técnica:
+      - Estrutura do Projeto: docs/estrutura.md
+      - API e Modelos: docs/api.md
+  - Referência do Código:
+      - Código Python: reference/
+
+plugins:
+  - search
+  - autorefs
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            docstring_style: google
+            show_root_heading: true
+            show_source: true
+
+markdown_extensions:
+  - attr_list
+  - admonition
+  - toc:
+      permalink: true
+  - footnotes
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.tabbed
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.emoji
+  - pymdownx.snippets
+
+extra_css:
+  - stylesheets/css/extra.css
+
+extra_javascript:
+  - stylesheets/javascripts/extra.js

@@ -1,0 +1,64 @@
+/* Cores principais: vermelho (#b71c1c), dourado (#cfa52d), preto (#000000) */
+
+/* Cabeçalho (barra superior) */
+.md-header {
+  background-color: #000000;
+}
+
+.md-nav__title {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* Tabs do menu horizontal (nav tabs) */
+.md-tabs {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.md-tabs__link {
+  color: #ffffff;
+}
+
+.md-tabs__link:hover {
+  color: #cfa52d;
+}
+
+.md-tabs__link--active {
+  color: #cfa52d;
+  border-bottom: 3px solid #b71c1c;
+}
+
+/* Adiciona logo ao lado do título */
+.md-logo img {
+  height: 2.2rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+/* Aplica cores em botões e links */
+.md-typeset a {
+  color: #d32f2f; /* vermelho */
+}
+
+.md-button {
+  background-color: #d32f2f;
+  color: white;
+}
+
+.md-button:hover {
+  background-color: #b71c1c;
+}
+
+/* Rodapé */
+.md-footer {
+  background: #111;
+  color: #eee;
+}
+
+/* Serve para centralizar a logo na página */
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}

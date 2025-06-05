@@ -1,18 +1,65 @@
 [project]
 name = "your-cross"
 version = "0.1.0"
-description = ""
+description = "Sistema web para gerenciamento de academia de crossfit"
 authors = [
-    {name = "cileno",email = "cileno12@gmail.com"}
+{name = "cileno", email = "cileno12@gmail.com"}
 ]
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.12,<4.0"
 dependencies = [
+"django >=5.2.2,<6.0.0",
+"psycopg2-binary >=2.9.10,<3.0.0",
+"python-decouple >=3.8,<4.0",
+"django-environ >=0.12.0,<0.13.0",
+"django-extensions >=4.1,<5.0",
+"pandas >=2.2.3,<3.0.0",
+"openpyxl >=3.1.5,<4.0.0",
+"requests >=2.32.3,<3.0.0"
 ]
 
 [tool.poetry]
 packages = [{include = "your_cross", from = "src"}]
 
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.4"
+pytest-django = "^4.11.1"
+factory-boy = "^3.3.3"
+coverage = "^7.8.2"
+isort = "^6.0.1"
+blue = "^0.9.1"
+ruff = "^0.4.5"
+taskipy = "^1.14.1"
+commitizen = "^4.8.2"
+
+[tool.poetry.group.docs.dependencies]
+mkdocs = "^1.5.3"
+mkdocs-material = "^9.5.14"
+mkdocstrings = "^0.24.0"
+mkdocs-autorefs = "^1.0.1"
+
+[tool.isort]
+profile = "black"
+line_length = 88
+multi_line_output = 3
+include_trailing_comma = true
+
+[tool.blue]
+line-length = 88
+
+[tool.ruff]
+line-length = 88
+exclude = [".venv", "migrations"]
+lint.select = ["E", "F"]
+
+[tool.taskipy.tasks]
+lint = "isort . && blue . && ruff check ."
+test = "pytest --ds=config.settings"
+coverage = "coverage run -m pytest && coverage report -m"
+docs = "mkdocs serve"
+
+[tool.poetry.plugins."poetry.application.plugin"]
+taskipy = "taskipy.plugin:TaskipyPlugin"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]

@@ -1,0 +1,9 @@
+![logo do projeto](assets/logo.png){width=100 .center}
+<!-- # Your Cross -->
+
+Sistema web para gestão de academia de crossfit.
+
+- Cadastro de alunos e professores
+- Gerenciamento de treinos e exercícios
+- Avaliações físicas e contratos
+- Pagamentos, promoções e comunicação
