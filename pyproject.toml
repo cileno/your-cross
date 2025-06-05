@@ -52,14 +52,34 @@ line-length = 88
 exclude = [".venv", "migrations"]
 lint.select = ["E", "F"]
 
+# 🎯 Tarefas automatizadas com Taskipy
 [tool.taskipy.tasks]
+
+# 🧹 Formatação e lint do código Python (isort, blue, ruff)
 lint = "isort . && blue . && ruff check ."
+
+# 🧪 Roda os testes com pytest e configuração django
 test = "pytest --ds=config.settings"
+
+# 🧾 Gera o relatório de cobertura dos testes
 coverage = "coverage run -m pytest && coverage report -m"
+
+# 📚 Roda o servidor local da documentação MkDocs
 docs = "mkdocs serve"
+
+# 📝 Gera changelog com base nos commits convencionais
 changelog = "cz changelog"
+
+#
 version = "poetry version -s"
-release = "cz bump && cz changelog && git add . && git commit -m 'chore(release): nova versão' && git push origin main --tags"
+
+# 🧹 Formatação e lint do código Python (isort, blue, ruff)
+changelog-docs = "cp scripts/docs_changelog_beautificado.md docs/changelog.md"
+
+# 🚀 Tarefa completa: cz bump + changelog + changelog bonitinho + commit + push + site local
+release = "cz bump && cz changelog && cp scripts/docs_changelog_beautificado.md docs/changelog.md && git add . && git commit -m 'chore(release): nova versão com changelog no site' && git push origin main --tags && mkdocs serve"
+# release = "cz bump && cz changelog && git add . && git commit -m 'chore(release): nova versão' && git push origin main --tags"
+
 
 [tool.poetry.plugins."poetry.application.plugin"]
 taskipy = "taskipy.plugin:TaskipyPlugin"
