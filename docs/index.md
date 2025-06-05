@@ -9,3 +9,4 @@ Sistema web para gestão de academia de crossfit.
 - Pagamentos, promoções e comunicação
 
 Documentação atualizada em 04/06/2025
+> Linha de validação para bump automático em 04/06/2025.
