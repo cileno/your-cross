@@ -3,39 +3,53 @@ name: Release
 on:
   push:
     branches:
-      - main
+      - main  # dispara este workflow sempre que houver push na branch main
 
 permissions:
-  contents: write
+  contents: write  # necessário para criar releases e tags
   issues: read
   pull-requests: write
 
 jobs:
   release:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # ambiente onde o job será executado
 
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # importante para garantir histórico e tags
+          fetch-depth: 0  # garante que o histórico Git completo (incluindo tags) esteja disponível
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
-      - name: Install Poetry
+      - name: Instala o Poetry
         run: |
           curl -sSL https://install.python-poetry.org | python3 -
 
-      - name: Install dependencies
+      - name: Instala as dependências do projeto
         run: |
           poetry install --only dev
 
-      - name: Configure Git user
+      - name: Configura o usuário Git (bot do GitHub)
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-      - name: (Opcional) Atualiza changelog
+      - name: Atualiza changelog
         run: poetry run cz changelog || echo "Sem mudanças no changelog"
+
+      - name: Lê a versão atual do projeto a partir do pyproject.toml
+        id: version
+        run: |
+          VERSION=$(poetry version -s)
+          echo "RELEASE_VERSION=$VERSION" >> $GITHUB_ENV  # exporta como variável para o job
+
+      - name: Cria release no GitHub com base no changelog
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v${{ env.RELEASE_VERSION }}  # nome da tag que será publicada
+          body_path: CHANGELOG.md  # conteúdo da release será retirado do changelog
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # token padrão fornecido pelo GitHub

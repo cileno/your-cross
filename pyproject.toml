@@ -57,6 +57,9 @@ lint = "isort . && blue . && ruff check ."
 test = "pytest --ds=config.settings"
 coverage = "coverage run -m pytest && coverage report -m"
 docs = "mkdocs serve"
+changelog = "cz changelog"
+version = "poetry version -s"
+release = "cz bump && cz changelog && git add . && git commit -m 'chore(release): nova versão' && git push origin main --tags"
 
 [tool.poetry.plugins."poetry.application.plugin"]
 taskipy = "taskipy.plugin:TaskipyPlugin"
