@@ -64,3 +64,10 @@ taskipy = "taskipy.plugin:TaskipyPlugin"
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+version = "0.1.0"
+tag_format = "v$version"
+version_files = ["pyproject.toml"]
+changelog_file = "CHANGELOG.md"
