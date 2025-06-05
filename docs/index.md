@@ -7,3 +7,5 @@ Sistema web para gestão de academia de crossfit.
 - Gerenciamento de treinos e exercícios
 - Avaliações físicas e contratos
 - Pagamentos, promoções e comunicação
+
+Documentação atualizada em 04/06/2025
