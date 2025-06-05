@@ -4,5 +4,5 @@
 
 ### 📚 Documentação
 
-- docs(readme): atualiza README com data
-- docs(index): adiciona linha de validação para teste do cz bump
+- docs(readme): atualiza README com data.
+- docs(index): adiciona linha de validação para teste do cz bump.
