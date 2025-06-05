@@ -1,0 +1,1 @@
+Documentação atualizada em 04/06/2025.
