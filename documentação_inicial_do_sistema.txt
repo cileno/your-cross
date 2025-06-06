@@ -1,0 +1,310 @@
+1. Descrição do projeto:
+	1. Objetivo: Gerenciar as atividades de uma academia de crossfit, onde seja possível:
+		1. O perfil de administrador possa:
+			1. controlar o financeiro da academia; 
+			2. montar planos de matrículas/renovações;
+			3. montar promoções para os alunos renovarem/matricularem na academia;
+			4. Estipular promoções para os alunos/clientes;
+			5. O administrador tem acesso a todo o sistema.
+
+		2. Ter um perfil recepção/secretaria que possa:
+			1. realizar matriculas/renovações dos clientes/alunos de acordos com os planos escolhidos pelo alunos/clientes;
+			2. ter acesso de consulta aos treinos (do dia e da semana) disponíveis para mostrar aos alunos/clientes;
+			3. abrir chamado para os equipamentos/materiais com problemas, os chamados de manutenção são enviados via e-mail e whatsapp para o administrador, professor e recepciosta/secretaria.
+			4. cadastrar os aparelhos da academia;
+			5. cadastrar os alunos (menos excluir, somente com autoriazação do administrador);
+			6. visualizar os planos e promoções;
+			7. aplicar descontos (previamente autorizados pelo administrador);
+			8. cadastrar colaboradores e professores/instrutores;
+			9. cadastrar os horários dos treinos.
+
+		3. Ter um perfil de professor/instrutor, onde ele possa;
+			1. realizar a avaliação física do aluno/cliente;
+			2. cadastrar os equipamentos da academia;
+			3. cadastrar os exercícios para os treinos;
+			4. cadastrar os treinos (de acordo com os horários estipulados) ou herdar os treinos montados pelo administrador;
+			5. alterar os seus dados cadastrados;
+			6. consultar os alunos/clientes cadastrados.
+			7. confirmar a presença do aluno/cliente no treino em que ministrou.
+
+		4. Ter o perfil do aluno/cliente, onde ele possa:
+			1. alterar seus dados cadstrados (nome, endereço, telefone, e-mail, data de nascimento, menos seu número de matrícula);
+			2. alterar seus dados de medidas obtidos na avaliação física (peso, altura, percentual de gordura, percentual de massa magra);
+			3. trocar seu plano na academia (de acordo com os planos disponíveis pelo administrador);
+			4. aderir a promoções e descontos estipulados pelo administrador;
+			5. cadastrar seu desempenho nos treinos em que fez seu check-in (só vale o treino atual, onde foi confirmado a presença pelo professor/instrutor);
+			6. realizar check-in no treino na data e horário escolhidos;
+			7. visualizar o seu desempenho via gráfico, de acordo com os desempenhos nos treinos cadastrados.		
+
+		5. Ter o perfil de visitante, que possa:
+			1. visualizar os planos da academia que estão disponíveis para matrícula;
+			2. visualizar os horários de treino e treinos do dia atual;
+			3. Visualizar a página de notícias da aplicação (promoções, descontos, textos de evolução dos alunos que são criados pelo administrador ou recepcionista/secretaria e página de contato da academia (telefone, e-mail, links das redes sociais);
+			4. opção para realizar seu cadastro na academia.
+
+2. Requisitos do sistema:
+	1. O perfil inicial de acesso ao sistema é de "Visitante", mas só visualiza planos de matrículas ativos, horarios de treino e os treinos disponíveis no dia atual, visualizar a página de notícias da aplicação, pode mandar mensagens para o administrador e recepcionista/secretaria (assunto da mensagem, nome completo do visitante, telefone de contato do visitante, e-mail do visitante, descrição da mensagem de até 500 caracteres), estas mensagens vão por e-mail e whatsapp do administrador e recepcionista/secretaria da academia que não são visíveis para o visitante. O visitante recebe e-mail com o protocolo da mensagem enviada (código do procolo, data de criação da mensagem, mensagem avisando o tempo de resposta do protocolo).
+
+	2. Para acessar o sistema deve ter cadastro previamente realizado e acessar com login (e-mail) e senha(criptografada). Os níveis de acesso são: 
+		1. Aluno: Pode visualizar as consultas do sistema; pode alterar os seus próprios dados (nome, endereço, telefone, e-mail, medidas);
+		2. Professor: Pode acessar todo o sistema, menos a parte financeira (contratos, promoções, descontos, taxas, acréscimos, planos);
+		3. Administrador: tem acesso a todo o sistema;
+		4. Secretaria: tem acesso a todo o sistema, menos alterações de contratos, planos, promoções, descontos, taxas e acréscimos;
+		5. Visitante: só realiza consulta no sistema e não possui cadastro no sistema. Nem faz login.
+
+	3. O aluno/cliente, só pode:
+		1. acessar seus dados pessoais;
+		2. verificar suas medidas e progresso nos treinos;
+		3. cadastrar suas reptições de exercícios nos treinos, onde realizou seu check-in e houve confirmação de presença no treino (realizado pelo professor/instrutor, ou administrador, ou recepcionista/secreataria);
+		4. realizar check-in nos treinos (sendo confirmada a presença pprofessor/instrutor, ou administrador, ou recepcionista/secreataria). 
+		5. Visualizar os gráficos de ritmo na realização dos exercícios, visualizar o percursos de suas corridas (quantos quilometros percorreu, quantas calorias perdeu, qual foi a média de velocidade), visualizar o progresso de realização de teste de força (carga máxima executada, sequência de progressão de carga - valor mínimo e valor máximo) de acordo com o aparelho executado.
+	4. O sistema deve manter os aparelhos da acâdemia (CRUD), que podem ser realizados também pelo Administrador, recepcionista/secretaria:
+		1. os dados dos aparelhos são:
+			1. código: campo chave (primary key) e auto-iuncrementável. Campo obrigatório. Campo do tipo inteiro.
+			2. nome do aparelho: nome do aparelho. Deve ser único no banco de dados. Campo obrigatório. Tipo do campo é string/varchar(30).
+			3. descrição do aparelho: campo que descreve a função do aparelho e serventia do aparelho. Campo obrigatório. é do tipo text curto. tamanho de 255 caracteres.
+			4. imagem do aparelho: campo que mostra uma imagem com extensão .PNG, ou .JPG, ou .JPEG de tamanho máximo de 300x148 pixels. Não é um campo obrigatório. É um campo do tipo de imagem.
+
+		2. Quem inclui, altera, ou exclui os aparelhos é o usuário de nível administrador ou recepcionista/secretária.
+
+		3. Os demais usuários (ou aluno, ou professor) só podem realizar consulta e para visualizar os dados do aparelho.
+
+		4. O sistema deve inicialmente cadastrar no banco de dados, os seguintes aparelhos:
+			1. Barras Olímpicas: Utilizadas em levantamento de peso olímpico, exercícios de agachamento, supino, e outros exercícios de força. 
+			2. Anilhas (Bumper Plates): Podem ser usadas em exercícios com barras olímpicas ou isoladamente, em diversos pesos. 
+			3. Halteres (Dumbbells): Essenciais para treinos de força, potência e resistência. 
+			4. Kettlebells: Versáteis, utilizados em exercícios como swings, cleans, e outros. 
+			5. Caixa (Box Jump): Para exercícios pliométricos, saltos, burpees e outros. 
+			6. Corda Naval: Utilizada em exercícios de força e resistência, como remo naval. 
+			7. Argolas Olímpicas: Para exercícios de ginástica, como ring dips, pull-ups, e muscle-ups. 
+			8. Rigs e Racks: Estruturas multifuncionais para exercícios como barras fixas, pull-ups, e suportes para barras olímpicas. 
+			9. Medicine Balls: Bolas de diferentes pesos, utilizadas em exercícios como slams, cleans, e outros. 
+			10. Elásticos: Usados em exercícios de força, resistência, e aquecimento. 
+			11. Colchonetes: Proporcionam conforto e segurança durante a prática. 
+			12. Corda de Pular: Para exercícios de condicionamento cardiovasculares. 
+			13. Abmat: Colchonete com formato especial para a região lombar, usado em exercícios de core e alongamento. 
+			14. Wall Ball: Bolas de borracha com peso interno, utilizadas em exercícios de alta intensidade. 
+			15. Piso Emborrachado: Proporciona conforto e absorção de impacto. 
+			16. Trenó: Para exercícios de resistência e força, puxando o trenó sobre um piso emborrachado.
+
+	5. Só tem acesso ao sistema após realizar o login (usuário e senha):
+		1. Todas as pessoas cadastradas no sistema são clientes (classe genérica ou classe principal).
+		2. a classe cliente deve ter:
+			1. id_cliente: campo chave de auto_incremento e não repetido na tabela (PRIMARY KEY). O campo não pode ser alterado e não deve aparecer nos formulários ou consultas. É um campo do tipo inteiro.
+			2. nome: só deve aceitar letras. É um campo do tipo string/varchar(30).
+			3. data de nascimento: não pode ser >= data atual do sistema. Deve ter um ranger para escolha ou digitação de 150 anos (mínino = data_atual_do_sistema - 100; data máxima = data atual do sistema). è um campo do tipo date.
+			4. sexo: dever ser um selectbox com as opções 'Masculino', 'Feminino' e 'Não informado'. É um campo do tipo string/varchar(13)
+			5. telefone: Só para aceitar dígitos e deixar formatados juntamente com o DDD+numero_do_telefone (a formatação pode ser: "(XX) X XXXX-XXXX" com 11 dígitos; ou com 10 dígitos com a formatação "(XX) XXXX-XXXX"; se o tamanho do telefone for diferente 11 dígitos ou 10 dígitos, retorne None; se o telefone for None, o sistema deve emitir uma mensagem solicitando a inserção de um telefone válido. Tipo do campo é string/varchar(16)
+			6. e-mail: e-mail do usuário; é preciso que seja verificado se o e-mail é válido; do contrário, solicitar o cadastro de um e-amil válido. tipo do campo é string/varchar(255)
+			7. password: senha de acesso com no mínimo 8 caracteres, sendo no mínimo 1 letra maíuscula, uma letra minúscula, um dígito e um caractere especial ('@', '#', '_', '-', '%', '$', '&', '*', etc.). O sistema deve vericar se a senha atende os requisitos citados. Tipo do campo é uma string/varchar(8). No banco de dados o valor deve ser guardado encriptografado. Quando o usuário for acessar o aplicativo, o sistema deve desencriptar a senha e comparar se a senha digitada é igual a senha guardada no banco de dados.
+			8. nível de acesso: O nível de acesso é escolhido da lista 'Aluno', 'Professor', 'Administrador' e 'Secretária'. Por padrão o sistema atribui o nível de acesso "Aluno". o Campo é do tipo string/varchar(13).
+			9. data_cadastro: do sistema preenche no CREATE e não aparece nos formulários. o Campo é do tipo datetime.
+			10. foto: campo de imagem, que guarda uma imagem do tipo .PNG, ou .JPG, ou .JPEG; de tamanho 50x50 pixels. o tipo do campo de imagem.
+		3. Somente o campo de foto não é obrigatório, os demais são.
+		4. Ao realizar o CREATE do cliente, o sistema envia para e-mail cadastrado do cliente o usuário (e-mail cadastrado) e a senha.
+		5. Caso o cadastro (create) esteja com perfil de acesso de 'Visitante' ou 'Aluno', o sistema só permite a escolha de nível de acesso de 'Aluno'. E ao criar/alterar o perfil de acesso, o sistema encerra a sessão e solicita o login de acesso.
+		6. Caso o cadastro (CRUD) esteja com perfil de 'Administrador' ou 'Secretária', o sistema permite alterar a escolha de nível de acesso, dentre a lista 'Aluno', 'Professor', 'Administrador' e 'Secretária'. E não encerra a sessão, somente salva os dados.
+		7. para os campos do tipo date ou datetime, o sistema guarda no padrão americano no banco de dados, mas ao exibir nas telas/páginas devem ser no padrão brasileiro 'DD/MM/YYYY' e horário "HH:MM:SS".
+
+	6. O sistema deve realizar o cadastro de alunos (CRUD):
+		1. Aluno é uma especificação de cliente.
+		2. O Aluno passa a ser identificado pelo campo de matrícula.
+		3. A chave primária da tabela é a matrícula.
+		4. Os campos da tabela de aluno são:
+			1. id_cliente: chave estrangeira advinda da tabela cliente (foreing key). Do tipo inteiro.
+			2. matrícula: campo gerado automaticamente pelo sistema. É do tipo string e de tamanho 15 caracteres. Deve conter somente dígitos. inicia com o ano de nascimento do cliente (YYYY), mais o ano da data atual do sistema (YYYY), mais o id_cliente (campo chave da tabela; no mínimo dois dígitos).		
+			3. endereço: caso seja inserido, verificar se o CEP é válido, retornando o logradouro, bairro, cidade e UF do Estado; deixar o campo de número da casa/apartamento em branco para digitação do usuário; caso o numero não seja preenchido, guarde no banco de dados "SN" (Sem número). É do tipo multivalorado pois é composta por logradouro, numero da casa, bairro, cidade, uf e cep (todos do tipo string/varchar).
+		5. Somente o campo de endereço não é obrigatório, os demais são.
+		6. Caso o "Aluno", ou "administrador" ou "secretária"  esteja realizando o cadastro, o sistema deve chamar a tela/página de contratos para o preenchimento. Mas somente após clicar no botão de "Salvar" e a inclusão seja válida.
+
+	7. O sistema deve realizar o cadastro de professores (CRUD):
+		1. Professor é uma especialização de cliente.
+		2. O professor para a ser identificado pelo CIP (Carteira de Identidade Profissional) emitida pelo CREF (Conselho Regional de Educação Física).
+		3. A chave primária da tabela é o CIP do professor. 
+		4. Os campos são:
+			1. id_cliente: chave estrangeira advinda da tabela cliente (foreing key). Do tipo inteiro.
+			2. cip do professor: Carteira de Identidade Profissional (CIP) do professor. Do tipo string/varchar(25).
+			3. Todos os campos são obrigatórios.
+
+	8. o sistema deve realizar o cadastro de colaboradores (CRUD):
+		1. Colaborador é uma especialização de cliente.
+		2. O Colaborador passa a ser identificado pelo número da CTPS (Carteira de Trabalho e Previdência Social).
+		3. Os campos da tabela de colaboradores são:
+			1. id_cliente: chave estrangeira advinda da tabela cliente (foreing key). Do tipo inteiro.
+			2. ctps do colaborador: número da Carteira de Trabalho e Previdência Social. Tipo string/varchar(20). chave primária da tabela.
+			3. data de admissão: Tipo do campo é date.
+			4. data de desligamento: tipo do campo é date.
+			5. cargo: é do tipo string/varchar(16). o usuário escolhe de uma lista de opções de cargos: 'Recepção', 'Limpeza', 'Manutenção', 'Secretária', 'Administrador(a)', 'Professor(a)'.
+		4. para os campos do tipo date ou datetime, o sistema guarda no padrão americano no banco de dados, mas ao exibir nas telas/páginas devem ser no padrão brasileiro 'DD/MM/YYYY' e horário "HH:MM:SS".
+
+	9. O sistema deve realizar o cadastro de exercícios (CRUD):
+		1. Os campos são:
+			1. id_exercicio: campo chave de auto_incremento e não repetido na tabela (PRIMARY KEY). É do tipo inteiro.
+			2. nm_exercicio: nome do exercício a ser executado. É do tipo string/varchar(60)
+			3. sigla_exercicio: abreveatura do exercício a ser executado ou nome curto do exercício. É do tipo string/varchar(15)
+			4. img_exercicio: imagem do exercício. Deve ser do tipo .PNG, ou .JPG, ou .JPEG, ou .GIF. Campo pode ser nulo. O usuário deve, se for preencher, escolher a imagem a ser salva. é do tipo imagem.
+			5. midia_exercicio: usuário pode escolher um vídeo curto mostrando a execução do exercício. o tipo de arquivo dever ser curto e de tipo compatível de visualização na web, de no máximo 60 segundos. O campo não é obrigatório de preenchimento. É do tipo de compatível de mídia.
+			6. lista de aparelhos que serão utilizados nos exercícios. Vem do cadastro de aparelhos como chave estrangeira. Pode realizar a multipla escolha de aparelhos.
+		2. Todos os campos são de preenchimento obrigatório.
+		3. Somente os usuários de nível diferentes de "Aluno" e "visitante" podem realizar Create, Update e Delete. 
+		4. O perfil de "Aluno" só visualiza os dados.
+		5. O perfil de "Visitante" não tem acesso aos dados.
+
+	10. O sistema deve realizar o cadastro de avaliação física (CRUD):
+		1. Os campos são:
+			1. id_avaliacao: campo chave de auto_incremento e não repetido na tabela (PRIMARY KEY). É do tipo inteiro.
+			2. id_cliente: chave estrangeira (foreing key) da tabela de cliente. Campo obrigatório. É do tipo inteiro.
+			3. unidade padrão: o usuário deve escolher entre quilogramas e metros (padrão brasileiro) ou no padrão americano. É do tipo string/varchar(12);
+			4. peso: peso do cliente de acordo com a unidade escolhida. Campo só aceita números (pode ser inteiro ou flutuante).
+			5. altura: altura do cliente de acordo com a unidade escolhida. Campo só aceita números (pode ser inteiro ou flutuante).
+			6. IMC: IMC do cliente, de acordo com a unidade escolhida. o sistema deve cálcular automaticamente de acordo com o peso e altura do clientes informadas. É do tipo número flutuante.
+			7. percentual_gordura: percentual de gordura do cliente de acordo com a unidade escolhida. Campo só aceita números (pode ser inteiro ou flutuante).
+			8. percentual_massa_magra: percentual de massa magra do cliente do cliente de acordo com a unidade escolhida. Campo só aceita números (pode ser inteiro ou flutuante).
+			9. circunferência abdominal: Circunferência abdominal do cliente de acordo com a unidade escolhida. Campo só aceita números (pode ser inteiro ou flutuante).
+			10. avaliação postural: avaliação postural do cliente  de acordo com a unidade escolhida (campo não obrigatório). Opções de escolha (APTO ou NÃO APTO). É do tipo string/varchar(9).
+			11. teste de flexibilidade: teste de flexibildade do cliente  (campo não obrigatório). Opções de escolha (APTO ou nÃO APTO). É do tipo string/varchar(9).
+			12. teste de força: teste de força do cliente  (campo não obrigatório). Opções de escolha (APTO ou nÃO APTO). É do tipo string/varchar(9).
+			13. teste de resistência cardiovascular: teste de resistência cardiovascular do cliente (campo não obrigatório). Opções de escolha (APTO ou nÃO APTO). É do tipo string/varchar(9).
+			14. outros testes relevantes: Outros testes a serem inseridos pelo profissional no cadastro (campo não obrigatório). É do tipo string/varchar(20).
+			15. id_professor: chave estrangeira (foreing key) advinda da tabela de professores. Campo obrigatório.
+		2. Usuários de nível "visitante", não tem acesso a esta opção.
+		3. Usuário de nível "Aluno", só pode visualizar os seus dados; ou seja, somente os dados igual a sua matrícula.
+		4. Os usuários de nível "Administrador" e "Professor" podem realizar CRUD.
+		5. Demais perfis de usuários ("Secreataria" ou "Colaborador") pode visualizar os dados.
+
+	11. O sistema deve realizar o cadastro dos horários de treino (CRUD):
+		1. Os campos devem ser:
+			1. id_horario: campo chave de auto_incremento e não repetido na tabela (PRIMARY KEY). É do tipo inteiro.
+			2. turno: turno do treino (matutino, vespertino, noturno). o usuário deve escolher dentre as três opções; campo é do tipo string/varchar(10)
+			3. horário de início: hora que começa o treino. Campo só aceita dígito e deve ter o formato HH:MM; é do tipo time.
+			4. horário de término: horário de termino do treino. Campo só aceita dígito e deve ter o formato HH:MM; é do tipo time.
+			5. status: Status do horário (ATIVO - horários disponível para uso; e, INATIVO - horários que não estão em uso). É do tipo string/varchar(7)
+		2. Somente os usuários de nível diferentes de "Aluno" e "visitante" podem realizar CRUD.
+		3. Demais usuários só podem visualizar os horários ativos.
+		4. O sistema pode guardar os campos de tipo time e date no padrão americano. Mas para mostrar nas páginas/telas o sistema deve formatar no padrão brasileiro ('HH:MM:SS') e para data 'DD/MM/YYYY'.
+
+	12. O sistema deve realizar o CRUD dos Planos Financeiros (Pacotes) da acadêmia, tabela de preços:
+		1. Os campos devem ser:
+			1. id do plano: campo chave (primary key), deve ser de números de autoincremento e únicos. É do tipo inteiro
+			2. nome do plano: é o nome do do plano/pacote a ser promovido. Deve ser único. É do tipo string/varchar(30).
+			3. descrição do plano: campo recebe uma breve explicação do plano. Exemplo: 'Plano de férias'. É do tipo string/varchar(255).
+			4. tipo de plano: o administrador deve escolher entre 'Diário', 'Mensal' e 'Anual'. O valor padrão é 'Diário'. é do tipo string/varchar(6)
+			5. tempo do plano: campo só aceita números inteiros de até dois dígitos. Exemplo: 02, ou 10. O valor padrão é 01.
+			6. tempo de repetição do plano: campo calculado pelo sistema automaticamente. Segue as seguintes regras:
+				1. Caso o tipo de plano seja 'Diário': multiplica o tempo do plano por 1;
+				2. Caso o tipo de plano seja 'Mensal': multiplica o tempo do plano por 30;
+				3. Caso o tipo de plano seja 'Anual': multiplica o tempo do plano por 360;
+				4. É do tipo inteiro.
+			7. valor básico do plano: campo só aceita números para valores de moeda brasileira (currency). O valor padrão do campo é 0.0. Caso o valor seja inferior a 0.0, o sistema deve emitir mensagem solicitando um valor válido. O tipo do campo é número flutuante.
+			8. valor do plano: campo só aceita números para valores de moeda brasileira (currency). O valor padrão do campo é 0.0. O sistema calcula automaticamente o valor do campo multiplicando o tempo do plano pelo valor básico do plano. Campo não é editável. O tipo do campo é número flutuante.
+		2. Somente o 'Administrador' acesso a esta tela/página para realizar o CRUD. 
+		3. Para os demais usuários, o sistema mostra a tela/página de consulta, onde se escolhe o plano e o sistema mostra os campos id do plano, nome do plano, descrição do plano e valor do plano.
+		4. O sistema pode guardar no banco de dados o valor dos campos 'valor básico do plano' e 'valor do plano' no formato americano, mas para exibir nas páginas/telas deve formatar para o padrão de moeda brasileiro.
+
+	13. O sistema deve realizar o cadastro dos contratos dos clientes (CRUD):
+		1. Os campos devem ser:
+			1. id do contrato:  campo chave de auto_incremento e não repetido na tabela (PRIMARY KEY); O campo é do tipo inteiro.
+			2. plano: campo advindo do cadastro de planos (chave estrangeira - foreing key). o usuário deve escolher em uma lista um dos planos cadastrados; è do tipo inteiro.
+			3. data de início: data em que o cliente iníciou/iniciará os treinos na academia. Formato da data é "DD/MM/YYYY"; é do tipo date.
+			4. data de término: data em que o cliente terminará os treinos na academia, de acordo com o plano escolhido. Formato da data é "DD/MM/YYYY". Os sistema cálcula automaticamente a data de acordo com o tempo de repetição do plano selecionado. Ou seja, o sistema busca o campo de tempo de repeticação da tabela de planos (conforme o plano escolhido) e multiplica pela data de início dos treinos; o campo é do tipo date.
+			5. período de bloqueio: Campo só aceita números inteiro (dois digitos). Por padrão, o período é de 3 dias. o campo é do tipo inteiro.
+			6. prazo final para renovação: campo mostra a data final para renovação do contrato. Campo é a soma da data de término com o período de bloqueio. Este campo não editável e o sistema cálcula automaticamente. O campo é do tipo date.
+			7. valor do contrato: campo só aceita números para valores de moedas brasileira (campo currency). O valor vem da tabela de planos (de acordo com o plano escolhido) que é o valor do plano. O campo é do tipo número flutuante.
+			8. descontos: campo só aceita números para valores de moedas brasileira (campo currency). O valor padrão é 0.00. Somente o 'Administrador' pode mudar o valor do campo, do contrário, permanece o valor padrão estipulado.  campo é do tipo número flutuante.
+			9. promoção: campo voltado para aplicar valores de promoção da academia. Só aceita números para valores de moeda brasileira (currency). O valor padrão é 0.00. Somente o 'Administrador' pode mudar o valor do campo, do contrário, permanece o valor padrão estipulado. campo é do tipo número flutuante.
+			10. taxa: valor para aplicar taxa de acréscimo por atrasos em porcentagem. só aceita números flutuantes. O valor padrão é 0.5%. campo é do tipo número flutuante.
+			11. acréscimo: Valor de acréscimo por atrasos nos pagamento. Campo é calculado pelo sistema. É calculado pela fórmula: acrescimo = taxa * quantidade de dias em atraso. Lembrando que a quantidade de dias de atraso deve ser contabilizado depois que o campo de prazo final para renovação seja superado. Campo não editável e só aceita números para valores de moedas brasileira (currecy). campo é do tipo número flutuante.
+			12. total do contrado: campo só aceita números para valores de moedas brasileira (currency). É calculado automaticamente pelo sistema de acordo com "valor do contrato + acrescimo - (descontos + promoção)". Campo não é editável. campo é do tipo número flutuante.
+		2. Caso o acesso seja de "Aluno", somente os campos de plano e data de ínício ficarão disponíveis para escolha. Os demais campos não ficarão ativos para edição e os calculos serão realizados automaticamente pelo sistema.
+		3. Caso o acesso seja de uma usuário 'Administrador' ou 'Secretária', o fluxo será de acordo com o descrito acima.
+		4. Demais usuários não terão acesso a esta página/tela.
+		5. Para os campos do tipo date, o sistema pode guardar no banco de dados os dados no padrão americano; mas para exibir nas telas/páginas, o sistema deve formatar para o padrão brasileiro ('DD/MM/YYYY').
+		6. O sistema pode guardar no banco de dados o valor dos campos do tipo de moeda (currency) no formato americano, mas para exibir nas páginas/telas deve formatar para o padrão de moeda brasileiro.	
+
+	14. O sistema deve realizar o cadastro das modalidades de treino (CRUD):
+		1. os campos devem ser:
+			1. id da modalidade de treino: campo chave da tabela (primary key) e auto incrementável; do tipo inteiro.
+			2. nome da modalidade de treino: campo deve ser único. A campo guarda o nome de uma modolidade de treino. do tipo string/varchar(20)
+		2. realize as inserções das seguintes modalidades: 'Crossfit', 'Jiu-Jitsu', 'Judô', 'Karatê', 'Capoeira', 'Muay Thai', 'Boxe', 'Taekwondo', 'Malhação', 'Dança' e 'MMA'.
+		3. somente o 'Administrador', 'Secretária' e 'Professor' podem realizar o CRUD completo.
+		4. Demais usuários podem somente visualizar os dados cadastrados.
+
+	15. O sistema deve realizar o cadastro dos treinos (CRUD):
+		1. Os campos devem ser:
+			1. id do treino:  campo chave de auto_incremento e não repetido na tabela (PRIMARY KEY); do tipo inteiro.
+			2. modalidade do treino: Campo advem da tabela de modalidades de treinos (chave estrangeira - Foreing key). O usuário escolher uma modalidade de uma lista de modalidades cadastradas. do tipo inteiro.
+			3. nível do treino: nível do treino, que podem ser 'Iniciante', 'Intermediário' e 'Avançado'. do tipo string/varchar(13)
+			4. data do treino: data em que o treino foi ou será realizado. Formato da data é "DD/MM/YYYY". do tipo date.
+			5. horario do treino: advem da tabela de horários com chave estrangeira. o usuário escolhe os horários de status ativo. do tipo time.
+			6. exercícios: lista de exercícios que foram/serão executados no treino. Todos os exercícios vêm da tabela de exercícios. Chave estrangeira.
+			7. professor: professor que executou ou executará o treino. Vem da tabela de professores. Chave estrangeira.
+		2. para os campos do tipo date, o sistema deve formatar os campos para o padrão de exibição das telas/páginas no formato 'DD/MM/YYYY'.
+		3. Para os campos do tipo time, o formato de exibição deve ser 'HH:MM:SS'.
+
+	16. O sistema deve realizar o cadastro da Academia (CRUD):
+		1. Os campos devem ser:
+			1. id da academia:  campo chave de auto_incremento e não repetido na tabela (PRIMARY KEY); campo é do tipo inteiro.
+			2. tipo de pessoa: campo só pode ser "Pessoa Física", ou "Pessoa Jurídica" ou "Autônomo"; é do tipo string/varchar(15).
+			3. cpf: campo de cpf da academia. O sistema de realizar a verificação do código do cpf se é válido ou não. Caso seja inválido, o sistema não salva os dados. CPF's com números sequenciais não são válidos. Este campo só é editável se o tipo de pessoal for "Pessoa Física" ou "Autônomo"; é do tipo string/varchar(14).
+			4. cnpj: campo de CNPJ da academia. O sistema deve realizar a verificação do código do cnpj se é válido ou não. Caso seja inválido, o sistema não salva os dados. CNPJ's com números sequenciais não são válidos. Este campo só é editável se o tipo de pessoal for "Pessoa Jurídica";  do tipo string/varchar(18).
+			5. Razão social da academia: Campo não pode ser vazio e deve ser único. è o campo de razão social da academia;  do tipo string/varchar(60)
+			6. nome fantasia: nome fantasia da academia. Campo não pode ser vazio e deve ser único;  do tipo string/varchar(30)
+			7. telefone de contato: Só para aceitar dígitos e deixar formatados juntamente com o DDD+numero_do_telefone (a formatação pode ser: "(XX) X XXXX-XXXX" com 11 dígitos; ou com 10 dígitos com a formatação "(XX) XXXX-XXXX"; se o tamanho do telefone for diferente 11 dígitos ou 10 dígitos, retorne None; seo o telefone for None, o sistema deve eitir uma mensagem solicitando a inserção de um telefone válido).  do tipo string/varchar(16)
+			8. e-mail: caso seja inserido, é preciso que seja verificado se o e-mail é válido; do contrário, solicitar o cadastro de um e-amil válido;  do tipo string/varchar(100)
+			chave PIX: se nada for preenchido o sistema deve preencher com o CPF (caso o tipo de pessoa seja "Pessoa Física" ou "Autônomo") ou CNPJ (caso o tipo de pessoal seja "Pessoa Jurídica").  do tipo string/varchar(100).
+		2. Somente o perfil de "Administrador" têm acesso ao CRUD.
+		3. O perfil de "Secretaria" pode realizar Update dos dados e visualizar;
+		4. Os demais perfis não têm acesso aos dados
+	17. O sistema deve realizar o cadastro de Chamado de Manutenção dos Aparelhos da academia (CRUD):
+		1. Os campos devem ser:
+			1. id do chamado: campo chave de auto_incremento e não repetido na tabela (PRIMARY KEY); campo é do tipo inteiro.
+			2. codigo do aparelho: chave estrangeira advinda da tabela dos aparelhos da academia (foreing key). campo é do tipo inteiro.
+			3. problema aparelho: campo string/varchar(30), que indica o problema do aparelho;
+			4. data e horário do chamado: campo do tipo datetime. O sistema cria automaticamente;
+			6. responsavel pela abertura do chamado: guarda o id do usuário que abriu o chamado. tipo do campo é string/varchar(30)
+			7. status do chamado: guarda o status do chamado ('aberto', 'pendente', 'fechado')
+			8. data do status do chamado: campo do tipo datetime. Conforme a mudança de status, o sistema guarda a da ta e hora da modificação.
+		2. para os campos do tipo datetime, o sistema deve formatar os campos para o padrão de exibição das telas/páginas no formato 'DD/MM/YYYY', 'HH:MM:SS'.
+		3. Somente os perfil de 'Administrador', 'Secretaria' e 'Professor', podem realizar o CRUD;
+		4. Demais perfis não têm acesso.
+
+3. Documentação
+	1. Criar a documentação do dicionários de dados;
+	2. Criar a documentação do DER;
+	3. Criar a documentação do MER;
+	4. Criar a documetação física do banco de dados;
+	5. Criar o diagrama de caso de uso (use case), onde os atores são o Administrador (tem acesso a todo sistema), Aluno (tem acesso somente aso seus dados em clientes; e, realizar consultas em horaŕios, treinos, exercícios, seus contratos e medidas) e Professor (tem acesso em medidas dos clientes, horários, treinos, exercícios, modalidades e a seus dados em professores; tem acesso de consulta em clientes e contratos);
+	6. criar o diagrama de classes;
+	7. Criar a documentação de sequencia;
+	8. Cria a documentação de Requesitos Funcionais (RF) e Requisitos Não Funcionais (RNF) do sistema;
+	9. Documente em Markdown todas as funcionálidades do sistema.
+
+
+4. Estrutura/Configuração do projeto:
+	1. nome do projeto: your-cross
+	2. deve estar armazenado em: projetos/
+	3. objetivo do projeto: é montar um aplicativo que se possa cadastrar os clientes/alunos em uma acadêmia de crossfit, onde se possa cadastrar os exercícios, professores, horários de treinos, os treinos do dia, avisar o Aluno como está seu progresso de treinos, como está suas mensalidades, período de renovação de matrícula. Participar de promoções e novos planos estimulados pela academia. Onde o aluno pode confirmar a participação de um treino e pode cadastrar suas repetições realizadas em determinado exercício realizado em um determinado treino.
+
+5. Instalar e configurar as ferramentas do projeto:
+	1. Instalar e configurar o pipx, poetry, vscode (extensões mais indicadas para utilização no projeto)
+	2. O sistema deve ser voltado para WEB, utilizando python, django psycopg2-binary python-decouple django-environ django-extensions, pandas
+	3. Criar a estrutura e ambiente com o poetry:
+		1. 📁 Criar a estrutura inicial do projeto
+			poetry new mega-sena && cd mega-sena && ls -la
+		2. ✍️ Gerar .gitignore com ignr.py
+			pipx install ignr                 # caso não tenha instalado
+			ignr -p python > .gitignore
+		3. Realizar o o commit inicial do projeto
+			1. proceder com os comando para realizar o git no repositório local e depois enviar para o GitHub
+		4. Criar e Ativar o Ambiente Virtual com poetry
+
+4. Instalar e configurar as bibliotecas/dependências para Dev/Docs:
+	* Dev: pytest, coverage, etc;
+	* Docs: mkdocs, mkdocstrings, readthedocs;
+	* automações: poetry e taskipy;
+	* formatadores: Blue e Isort;
+	* configurar as bibliotecas no ambiente;
+	* integração contínua com o Github Actions
+	
+5. Utilize as ferramentas mais utilizadas pela comunidade python e gere documentação e explicação das configurações dos módulos, bibliotecas e ferramentas.
+6. O sistema deve seguir a PEP8

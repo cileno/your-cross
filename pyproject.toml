@@ -27,22 +27,31 @@ pytest-django = "^4.11.1"
 factory-boy = "^3.3.3"
 coverage = "^7.8.2"
 isort = "^6.0.1"
-blue = "^0.9.1"
 ruff = "^0.4.5"
 taskipy = "^1.14.1"
 commitizen = "^4.8.2"
+flake8 = "^7.2.0"
+black = "^25.1.0"
+mypy = "^1.16.0"
+pre-commit = "^4.2.0"
+mkdocstrings = {extras = ["python"], version = "^0.29.1"}
+mkdocs-gen-files = "^0.5.0"
+mkdocs-autorefs = "^1.4.2"
 
 [tool.poetry.group.docs.dependencies]
 mkdocs = "^1.5.3"
 mkdocs-material = "^9.5.14"
-mkdocstrings = "^0.24.0"
+mkdocstrings = {extras = ["python"], version = "^0.29.1"}
 mkdocs-autorefs = "^1.0.1"
+mkdocs-include-markdown-plugin = "^7.1.5"
+mkdocs-gen-files = "^0.5.0"
 
 [tool.isort]
 profile = "black"
 line_length = 88
 multi_line_output = 3
 include_trailing_comma = true
+known_first_party = ["config", "core", "aparelhos", "contratos", "autenticacao"]
 
 [tool.blue]
 line-length = 88
@@ -51,12 +60,14 @@ line-length = 88
 line-length = 88
 exclude = [".venv", "migrations"]
 lint.select = ["E", "F"]
+lint.ignore = ["E501"]
 
 # 🎯 Tarefas automatizadas com Taskipy
 [tool.taskipy.tasks]
 
 # 🧹 Formatação e lint do código Python (isort, blue, ruff)
-lint = "isort . && blue . && ruff check ."
+# lint = "isort . && blue . && ruff check ."
+lint = "isort . && black . && ruff check ."
 
 # 🧪 Roda os testes com pytest e configuração django
 test = "pytest --ds=config.settings"
@@ -67,19 +78,27 @@ coverage = "coverage run -m pytest && coverage report -m"
 # 📚 Roda o servidor local da documentação MkDocs
 docs = "mkdocs serve"
 
+# 📁 Gera pasta site/ com a documentação
+docs-build = "mkdocs build"
+
+# 📄 Gera arquivos de referência da API com mkdocstrings
+docs-ref = "python docs/gen_reference.py"
+
+# 🧾 Gera toda a documentação (referência + build)
+docs-full = "task docs-ref && task docs-build"
+
 # 📝 Gera changelog com base nos commits convencionais
 changelog = "cz changelog"
 
 #
 version = "poetry version -s"
 
-# 🧹 Formatação e lint do código Python (isort, blue, ruff)
+# 🖋️ Formatação e lint do código Python (isort, blue, ruff)
 changelog-docs = "cp scripts/docs_changelog_beautificado.md docs/changelog.md"
 
 # 🚀 Tarefa completa: cz bump + changelog + changelog bonitinho + commit + push + site local
 release = "cz bump && cz changelog && cp scripts/docs_changelog_beautificado.md docs/changelog.md && git add . && git commit -m 'chore(release): nova versão com changelog no site' && git push origin main --tags && mkdocs serve"
 # release = "cz bump && cz changelog && git add . && git commit -m 'chore(release): nova versão' && git push origin main --tags"
-
 
 [tool.poetry.plugins."poetry.application.plugin"]
 taskipy = "taskipy.plugin:TaskipyPlugin"

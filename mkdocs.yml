@@ -1,8 +1,8 @@
 # Gerar um arquivo mkdocs.yml válido e corrigido no formato correto
 site_name: Your Cross
 site_url: https://your-cross.localhost/
-repo_url: https://github.com/cileno/your-cross # https://github.com/seu-usuario/your-cross 
-repo_name: cileno/your-cross  # GitHub
+repo_url: https://github.com/cileno/your-cross
+repo_name: cileno/your-cross
 site_author: Paudercley Cileno
 site_description: Sistema Web para Gestão de Academia de Crossfit
 
@@ -11,6 +11,8 @@ theme:
   language: pt-BR
   logo: assets/logo.png
   favicon: assets/logo.png
+  icon:
+    repo: fontawesome/brands/github
   features:
     - navigation.tabs
     - navigation.indexes
@@ -27,24 +29,23 @@ theme:
       scheme: slate
       primary: deep orange
       accent: amber
-  icon:
-    repo: fontawesome/brands/github
 
 nav:
   - Início: index.md
   - Guia de Uso:
-      - Como instalar: guia/instalacao.md
-      - Comandos úteis: guia/comandos.md
+      - Instalação: guia/instalacao.md
+      - Comandos: guia/comandos.md
   - Documentação Técnica:
-      - Estrutura do Projeto: docs/estrutura.md
-      - API e Modelos: docs/api.md
+      - Estrutura do Projeto: tech/estrutura.md
+      - API e Modelos: tech/api.md
   - Referência do Código:
-      - Código Python: reference/
+      - Módulos Python: reference/
   - Histórico de Versões: changelog.md
 
 plugins:
   - search
   - autorefs
+  - include-markdown
   - mkdocstrings:
       handlers:
         python:
@@ -52,6 +53,9 @@ plugins:
             docstring_style: google
             show_root_heading: true
             show_source: true
+  - gen-files:
+      scripts:
+        - docs/gen_reference.py
 
 markdown_extensions:
   - attr_list
