@@ -1,0 +1,40 @@
+name: 📦 Deploy documentação
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    name: 🚀 Deploy para GitHub Pages
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: ⬇️ Checkout do código
+        uses: actions/checkout@v4
+
+      - name: 📦 Configura o Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 🐍 Instala o Poetry
+        uses: snok/install-poetry@v1
+
+      - name: 📦 Instala dependências com Poetry
+        run: |
+          poetry install --no-root
+
+      - name: 🧱 Gera a documentação com MkDocs
+        run: |
+          poetry run task docs-full
+
+      - name: 🚀 Publica no GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
