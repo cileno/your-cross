@@ -1,8 +1,9 @@
-# Changelog
+## v0.1.2 (2025-06-05)
 
-## 0.1.1 (2025-06-04)
+### Fix
 
-### 📚 Documentação
+- corrige estrutura da documentação e tasks
 
-- docs(readme): atualiza README com data.
-- docs(index): adiciona linha de validação para teste do cz bump.
+## v0.1.1 (2025-06-05)
+
+## v0.1.0 (2025-06-04)
