@@ -1,0 +1,83 @@
+@startuml DER
+skinparam shadowing false
+skinparam roundcorner 15
+skinparam handwritten false
+skinparam class {
+    BackgroundColor white
+    ArrowColor #333
+    BorderColor black
+}
+
+package "Usuários" {
+    entity Usuario {
+        +id_usuario : UUID <<PK>>
+        nome : string
+        email : string
+        senha : string
+        perfil : enum
+    }
+
+    entity Aluno {
+        +id_aluno : UUID <<PK>>
+        fk_usuario : UUID <<FK>>
+        data_nascimento : date
+        plano_ativo : boolean
+    }
+
+    entity Professor {
+        +id_professor : UUID <<PK>>
+        fk_usuario : UUID <<FK>>
+        cref : string
+        especialidade : string
+    }
+
+    Usuario ||--o{ Aluno : "1:N"
+    Usuario ||--o{ Professor : "1:N"
+}
+
+package "Treinamento" {
+    entity Treino {
+        +id_treino : UUID <<PK>>
+        nome : string
+        descricao : text
+        data_inicio : date
+        data_fim : date
+        fk_professor : UUID <<FK>>
+    }
+
+    entity Aluno_Treino {
+        +id : UUID <<PK>>
+        fk_aluno : UUID <<FK>>
+        fk_treino : UUID <<FK>>
+        status : enum
+    }
+
+    Professor ||--o{ Treino : "1:N"
+    Treino ||--o{ Aluno_Treino : "1:N"
+    Aluno ||--o{ Aluno_Treino : "1:N"
+}
+
+package "Financeiro" {
+    entity Pagamento {
+        +id_pagamento : UUID <<PK>>
+        fk_aluno : UUID <<FK>>
+        valor : decimal
+        data_pagamento : date
+        status : enum
+    }
+
+    Aluno ||--o{ Pagamento : "1:N"
+}
+
+package "Autenticacao" {
+    entity Token {
+        +id_token : UUID <<PK>>
+        fk_usuario : UUID <<FK>>
+        token : string
+        criado_em : datetime
+        expira_em : datetime
+    }
+
+    Usuario ||--o{ Token : "1:N"
+}
+@enduml

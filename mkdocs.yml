@@ -38,6 +38,8 @@ nav:
       - Estrutura do Projeto: tech/estrutura.md
       - Casos de Uso: tech/diagramas/casos_uso.md
       - Diagrama de Classes: tech/diagramas/diagrama_classes.md
+      - Modelo Entidade-Relacionamento (MER): tech/diagramas/mer.md
+      - Diagrama de Entidade e Relacionamento (DER): tech/diagramas/der.md
       - API e Modelos: tech/api.md
   - 👨‍💻️ Referência do Código:
       - Módulos Python: reference/

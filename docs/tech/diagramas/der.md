@@ -1,0 +1,16 @@
+# 🧩 Diagrama DER
+
+O Diagrama Entidade-Relacionamento (DER) apresenta a estrutura lógica do banco de dados do sistema **Your Cross**, refletindo as entidades principais, relacionamentos e cardinalidades.
+
+Ele foi construído com base no diagrama de classes e no MER, agrupando as entidades por domínios funcionais:
+
+- **Usuários**: entidades relacionadas a alunos, professores e autenticação.
+- **Treinamento**: organização dos treinos e sua vinculação a alunos e professores.
+- **Financeiro**: controle dos pagamentos vinculados aos alunos.
+- **Autenticação**: tokens de acesso para segurança do sistema.
+
+📌 Visualização:
+
+[![Diagrama DER](https://img.plantuml.biz/plantuml/svg/dLF1QXin4BtxAuHxB3a4qqi88MvJGoaKK-hpCf5cxS7QqJBInYb9FwRVqX_hMbQzQrazn7jPUEz9l9dtTEy3IEWQgnu-Vv_uBN4B0eto6p1kHxnMDLYF8qPSnqOxOHHr_M54R83DJYW4vBD3seBtwcMY-kyZwEqwtlB9MITgjw60aPcBkDq1V3URpGvg9mRb03xQ_kZarsJIzdzOevgkVFVdjv3pqtGvSg3mK_KuzF01ZDzxCbMNq1krMdrvKBUtowztTqS5kmPxoWVfnpwYs03PSzWZR-0SRb7gA4VkceZsRaU-vhRZt1L4hEoftfwRNem51W9K35vJWnnwrHx1mOy5TXK4UjfJZyvP12xuMeghqNidcRVsY5_eJmlMXQNw5ZM19GC61thmTGpmzVNgohseUThHzFhcsxGa60P8efEQ_10aXhYXh2YHoHC94NnJJGnwBQHXVohWSpWDY9WqPU4aggOcn-ljiFTyhUL6LQKn_XjPthX5HgVnoxmF43fVQFYGG8eaUHg7bg1ng5L15ecogX3kWXXO8qcUxHBMXyppKX_nYpRq13RcOb1J0_Oapk7kBDJotl9X1yl5IUTTw3dIeE6inswBdDSuOXS-t7GuxxaM0kCg_5VQGCqm8pwt950WYuywUHu6lKSsNMF_0W00)](https://editor.plantuml.com/uml/dLF1QXin4BtxAuHxB3a4qqi88MvJGoaKK-hpCf5cxS7QqJBInYb9FwRVqX_hMbQzQrazn7jPUEz9l9dtTEy3IEWQgnu-Vv_uBN4B0eto6p1kHxnMDLYF8qPSnqOxOHHr_M54R83DJYW4vBD3seBtwcMY-kyZwEqwtlB9MITgjw60aPcBkDq1V3URpGvg9mRb03xQ_kZarsJIzdzOevgkVFVdjv3pqtGvSg3mK_KuzF01ZDzxCbMNq1krMdrvKBUtowztTqS5kmPxoWVfnpwYs03PSzWZR-0SRb7gA4VkceZsRaU-vhRZt1L4hEoftfwRNem51W9K35vJWnnwrHx1mOy5TXK4UjfJZyvP12xuMeghqNidcRVsY5_eJmlMXQNw5ZM19GC61thmTGpmzVNgohseUThHzFhcsxGa60P8efEQ_10aXhYXh2YHoHC94NnJJGnwBQHXVohWSpWDY9WqPU4aggOcn-ljiFTyhUL6LQKn_XjPthX5HgVnoxmF43fVQFYGG8eaUHg7bg1ng5L15ecogX3kWXXO8qcUxHBMXyppKX_nYpRq13RcOb1J0_Oapk7kBDJotl9X1yl5IUTTw3dIeE6inswBdDSuOXS-t7GuxxaM0kCg_5VQGCqm8pwt950WYuywUHu6lKSsNMF_0W00)
+
+> Este diagrama é renderizado via PlantUML Server para compatibilidade com GitHub Pages.
