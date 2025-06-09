@@ -1,4 +1,8 @@
-## Unreleased
+## v0.2.0 (2025-06-08)
+
+### Feat
+
+- **docs**: documentação técnica inicial com diagramas
 
 ## v0.1.2 (2025-06-05)
 
