@@ -1,0 +1,25 @@
+Tabela,Campo,Tipo,Obrigatório,Chave,Descrição
+Aluno,id,integer,sim,PK,Identificador único do aluno
+Aluno,nome,string,sim,-,Nome completo do aluno
+Aluno,email,string,sim,-,Email do aluno
+Aluno,data_nascimento,date,não,-,Data de nascimento
+Aluno,plano_id,integer,sim,FK,Plano financeiro vinculado
+Aluno,usuario_id,integer,sim,FK,Usuário de login vinculado
+Professor,id,integer,sim,PK,Identificador do professor
+Professor,nome,string,sim,-,Nome completo do professor
+Professor,email,string,sim,-,Email do professor
+Professor,usuario_id,integer,sim,FK,Usuário vinculado
+Treino,id,integer,sim,PK,Identificador do treino
+Treino,titulo,string,sim,-,Título ou nome do treino
+Treino,descricao,string,não,-,Descrição detalhada
+Treino,aluno_id,integer,sim,FK,Aluno ao qual o treino pertence
+Treino,professor_id,integer,sim,FK,Professor responsável
+Pagamento,id,integer,sim,PK,Identificador do pagamento
+Pagamento,valor,decimal,sim,-,Valor pago
+Pagamento,data,date,sim,-,Data do pagamento
+Pagamento,aluno_id,integer,sim,FK,Aluno que realizou o pagamento
+Pagamento,metodo,string,sim,-,Forma de pagamento
+Usuário,id,integer,sim,PK,Identificador do usuário
+Usuário,username,string,sim,-,Nome de login
+Usuário,senha,string,sim,-,Hash da senha
+Usuário,tipo,string,sim,-,Tipo: admin, secretaria, aluno…
