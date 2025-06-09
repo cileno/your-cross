@@ -1,8 +1,6 @@
+## Unreleased
+
 ## v0.3.0 (2025-06-08)
-
-### Feat
-
-- **task**: adiciona task para remover chrome do histórico
 
 ## v0.2.0 (2025-06-08)
 

@@ -1,6 +1,6 @@
 [project]
 name = "your-cross"
-version = "0.1.0"
+version = "0.1.1"
 description = "Sistema web para gerenciamento de academia de crossfit"
 authors = [
 {name = "cileno", email = "cileno12@gmail.com"}
