@@ -101,6 +101,10 @@ changelog-docs = "cp scripts/docs_changelog_beautificado.md docs/changelog.md"
 release = "cz bump && cz changelog && cp scripts/docs_changelog_beautificado.md docs/changelog.md && git add . && git commit -m 'chore(release): nova versão com changelog no site' && git push origin main --tags && mkdocs serve"
 # release = "cz bump && cz changelog && git add . && git commit -m 'chore(release): nova versão' && git push origin main --tags"
 
+# Atualizar o taskfile com a task clean-history
+clean-history = 'git filter-repo --path chrome/ --invert-paths'
+
+
 [tool.poetry.plugins."poetry.application.plugin"]
 taskipy = "taskipy.plugin:TaskipyPlugin"
 
