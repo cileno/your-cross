@@ -1,0 +1,33 @@
+# 
+```plantuml
+@startuml
+skinparam packageStyle rectangle
+
+package "Projeto Django" {
+    [config] <<settings>>
+}
+
+package "Aplicação YourCross" {
+    [alunos]
+    [professores]
+    [treinos]
+    [financeiro]
+    [autenticacao]
+    [utils]
+}
+
+[config] --> [alunos]
+[config] --> [professores]
+[config] --> [treinos]
+[config] --> [financeiro]
+[config] --> [autenticacao]
+
+[alunos] --> [financeiro]
+[treinos] --> [alunos]
+[treinos] --> [professores]
+[financeiro] --> [autenticacao]
+[autenticacao] --> [utils]
+@enduml
+```
+
+

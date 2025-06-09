@@ -54,6 +54,10 @@
     
       <link rel="stylesheet" href="stylesheets/css/extra.css">
     
+      <link rel="stylesheet" href="assets/mkdocs_puml/puml.css">
+    
+      <link rel="stylesheet" href="assets/mkdocs_puml/interaction.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -78,6 +82,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#your-cross" class="md-skip">
+          Pular para conteúdo
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -108,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Início
+              🔰️ Início
             
           </span>
         </div>
@@ -221,7 +230,7 @@
   
     
   
-  Início
+  🔰️ Início
 
       </a>
     </li>
@@ -242,7 +251,7 @@
   
     
   
-  Guia de Uso
+  🗺️ Guia de Uso
 
         </a>
       </li>
@@ -264,7 +273,7 @@
   
     
   
-  Documentação Técnica
+  🗃️ Documentação Técnica
 
         </a>
       </li>
@@ -286,7 +295,7 @@
   
     
   
-  Referência do Código
+  👨‍💻️ Referência do Código
 
         </a>
       </li>
@@ -299,17 +308,20 @@
   
   
   
-    <li class="md-tabs__item">
-      <a href="changelog/" class="md-tabs__link">
-        
+    
+    
+      <li class="md-tabs__item">
+        <a href="changelog/" class="md-tabs__link">
+          
   
   
     
   
-  Histórico de Versões
+  📎 Extras
 
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -370,18 +382,79 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    🔰️ Início
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="." class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    Início
+    🔰️ Início
     
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sobre-o-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Sobre o Sistema
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navegue-pela-documentacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧭 Navegue pela Documentação
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#desenvolvedor" class="md-nav__link">
+    <span class="md-ellipsis">
+      👨‍💻 Desenvolvedor
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -421,7 +494,7 @@
   
   
   <span class="md-ellipsis">
-    Guia de Uso
+    🗺️ Guia de Uso
     
   </span>
   
@@ -432,7 +505,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            Guia de Uso
+            🗺️ Guia de Uso
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -502,6 +575,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -523,7 +600,7 @@
   
   
   <span class="md-ellipsis">
-    Documentação Técnica
+    🗃️ Documentação Técnica
     
   </span>
   
@@ -534,7 +611,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            Documentação Técnica
+            🗃️ Documentação Técnica
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -551,6 +628,52 @@
   
   <span class="md-ellipsis">
     Estrutura do Projeto
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tech/diagramas/casos_uso/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Casos de Uso
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tech/diagramas/diagrama_classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Diagrama de Classes
     
   </span>
   
@@ -623,7 +746,7 @@
   
   
   <span class="md-ellipsis">
-    Referência do Código
+    👨‍💻️ Referência do Código
     
   </span>
   
@@ -634,7 +757,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Referência do Código
+            👨‍💻️ Referência do Código
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -674,6 +797,55 @@
   
   
   
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    📎 Extras
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            📎 Extras
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="changelog/" class="md-nav__link">
         
@@ -686,6 +858,37 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cobertura/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cobertura de Testes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -707,6 +910,43 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sobre-o-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Sobre o Sistema
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navegue-pela-documentacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧭 Navegue pela Documentação
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#desenvolvedor" class="md-nav__link">
+    <span class="md-ellipsis">
+      👨‍💻 Desenvolvedor
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -725,22 +965,43 @@
   
 
 
-  <h1>Início</h1>
-
-<p><img alt="logo do projeto" class="center" src="assets/logo.png" width="100" /></p>
-<!-- # Your Cross -->
-
-<p>Sistema web para gestão de academia de crossfit.</p>
+<p><img alt="logo do projeto" class="center" src="assets/logo.png" width="120" /></p>
+<h1 id="your-cross">Your Cross 🏋️‍♂️<a class="headerlink" href="#your-cross" title="Permanent link">&para;</a></h1>
+<p>Sistema Web para Gestão de Academia de Crossfit</p>
+<p>Bem-vindo à documentação oficial do Your Cross — uma plataforma moderna, prática e completa para gerenciar academias de crossfit.</p>
+<hr />
+<h2 id="sobre-o-sistema">🚀 Sobre o Sistema<a class="headerlink" href="#sobre-o-sistema" title="Permanent link">&para;</a></h2>
+<p>O Your Cross foi criado para simplificar o dia a dia de gestores e instrutores. Entre os principais recursos, estão:</p>
 <ul>
-<li>Cadastro de alunos e professores</li>
-<li>Gerenciamento de treinos e exercícios</li>
-<li>Avaliações físicas e contratos</li>
-<li>Pagamentos, promoções e comunicação</li>
+<li>Cadastro de alunos, professores e planos</li>
+<li>Gestão de treinos, exercícios e aulas</li>
+<li>Avaliações físicas e contratos automatizados</li>
+<li>Controle de pagamentos e promoções</li>
+<li>Comunicação interna com alunos</li>
+<li>Exportação de relatórios (Excel, PDF)</li>
+<li>Dashboard com métricas e gráficos</li>
 </ul>
-<p>Documentação atualizada em 06/06/2025</p>
-<blockquote>
-<p>Linha de validação para bump automático em 04/06/2025.</p>
-</blockquote>
+<hr />
+<h2 id="navegue-pela-documentacao">🧭 Navegue pela Documentação<a class="headerlink" href="#navegue-pela-documentacao" title="Permanent link">&para;</a></h2>
+<ul>
+<li>📘 <a href="guia/instalacao/">Guia de Uso</a> — Instalação, configuração e primeiros passos</li>
+<li>🏗️ <a href="tech/estrutura/">Estrutura Técnica</a> — Arquitetura, tecnologias e pastas</li>
+<li>🧩 <a href="reference/">Referência do Código</a> — Documentação gerada dos módulos Python</li>
+<li>🧾 <a href="changelog/">Histórico de Versões</a> — Mudanças e evolução do projeto</li>
+<li>✅ <a href="cobertura/index.html">Cobertura de Testes</a> — Confiança no código</li>
+<li>🗺️ Diagramas integrados (Mermaid + PlantUML) para visualização da arquitetura</li>
+</ul>
+<hr />
+<h2 id="desenvolvedor">👨‍💻 Desenvolvedor<a class="headerlink" href="#desenvolvedor" title="Permanent link">&para;</a></h2>
+<p>Este projeto é mantido com ❤️ por<br />
+<a href="https://github.com/cileno">Paudercley Cileno</a></p>
+<p>Contribuições, sugestões e issues são sempre bem-vindas:<br />
+📌 <a href="https://github.com/cileno/your-cross">Repositório no GitHub</a></p>
+<hr />
+<p><small>
+🗓️ Documentação atualizada em 06/06/2025<br />
+🔁 Linha de validação automática de versão (bump): 04/06/2025
+</small></p>
 
 
 
@@ -795,6 +1056,12 @@
       <script src="assets/javascripts/bundle.13a4f30d.min.js"></script>
       
         <script src="stylesheets/javascripts/extra.js"></script>
+      
+        <script src="assets/mkdocs_puml/puml.js"></script>
+      
+        <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+      
+        <script src="assets/mkdocs_puml/interaction.js"></script>
       
     
   </body>

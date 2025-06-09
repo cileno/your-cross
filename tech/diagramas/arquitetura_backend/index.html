@@ -7,29 +7,27 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Sistema Web para Gestão de Academia de Crossfit" name="description"/>
 <meta content="Paudercley Cileno" name="author"/>
-<link href="https://your-cross.localhost/tech/estrutura/" rel="canonical"/>
-<link href="../../guia/comandos/" rel="prev"/>
-<link href="../diagramas/casos_uso/" rel="next"/>
-<link href="../../assets/logo.png" rel="icon"/>
+<link href="https://your-cross.localhost/tech/diagramas/arquitetura_backend/" rel="canonical"/>
+<link href="../../../assets/logo.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.6.14" name="generator"/>
-<title>Estrutura do Projeto - Your Cross</title>
-<link href="../../assets/stylesheets/main.342714a4.min.css" rel="stylesheet"/>
-<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<title>Diagrama da Arquitetura Backend (Mermaid) - Your Cross</title>
+<link href="../../../assets/stylesheets/main.342714a4.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<link href="../../assets/_mkdocstrings.css" rel="stylesheet"/>
-<link href="../../stylesheets/css/extra.css" rel="stylesheet"/>
-<link href="../../assets/mkdocs_puml/puml.css" rel="stylesheet"/>
-<link href="../../assets/mkdocs_puml/interaction.css" rel="stylesheet"/>
-<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../../assets/_mkdocstrings.css" rel="stylesheet"/>
+<link href="../../../stylesheets/css/extra.css" rel="stylesheet"/>
+<link href="../../../assets/mkdocs_puml/puml.css" rel="stylesheet"/>
+<link href="../../../assets/mkdocs_puml/interaction.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 </head>
 <body data-md-color-accent="amber" data-md-color-primary="deep-orange" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#estrutura-do-projeto">
+<a class="md-skip" href="#diagrama-da-arquitetura-backend-mermaid">
           Pular para conteúdo
         </a>
 </div>
@@ -37,8 +35,8 @@
 </div>
 <header class="md-header" data-md-component="header">
 <nav aria-label="Cabeçalho" class="md-header__inner md-grid">
-<a aria-label="Your Cross" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Your Cross">
-<img alt="logo" src="../../assets/logo.png"/>
+<a aria-label="Your Cross" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Your Cross">
+<img alt="logo" src="../../../assets/logo.png"/>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
@@ -53,7 +51,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Estrutura do Projeto
+              Diagrama da Arquitetura Backend (Mermaid)
             
           </span>
 </div>
@@ -112,7 +110,7 @@
 <div class="md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../..">
+<a class="md-tabs__link" href="../../..">
         
   
   
@@ -123,7 +121,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../guia/instalacao/">
+<a class="md-tabs__link" href="../../../guia/instalacao/">
           
   
   
@@ -133,8 +131,8 @@
 
         </a>
 </li>
-<li class="md-tabs__item md-tabs__item--active">
-<a class="md-tabs__link" href="./">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../estrutura/">
           
   
   
@@ -145,7 +143,7 @@
         </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../reference/">
+<a class="md-tabs__link" href="../../../reference/">
           
   
   
@@ -156,7 +154,7 @@
         </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../changelog/">
+<a class="md-tabs__link" href="../../../changelog/">
           
   
   
@@ -176,8 +174,8 @@
 <div class="md-sidebar__inner">
 <nav aria-label="Navegação" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="Your Cross" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Your Cross">
-<img alt="logo" src="../../assets/logo.png"/>
+<a aria-label="Your Cross" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Your Cross">
+<img alt="logo" src="../../../assets/logo.png"/>
 </a>
     Your Cross
   </label>
@@ -193,7 +191,7 @@
 </div>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../..">
+<a class="md-nav__link" href="../../..">
 <span class="md-ellipsis">
     🔰️ Início
     
@@ -216,7 +214,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../guia/instalacao/">
+<a class="md-nav__link" href="../../../guia/instalacao/">
 <span class="md-ellipsis">
     Instalação
     
@@ -224,7 +222,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../guia/comandos/">
+<a class="md-nav__link" href="../../../guia/comandos/">
 <span class="md-ellipsis">
     Comandos
     
@@ -234,61 +232,31 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
 <span class="md-ellipsis">
     🗃️ Documentação Técnica
     
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
             🗃️ Documentação Técnica
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-<span class="md-ellipsis">
-    Estrutura do Projeto
-    
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../estrutura/">
 <span class="md-ellipsis">
     Estrutura do Projeto
     
   </span>
 </a>
-<nav aria-label="Índice" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Índice
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#arquitetura-backend-plantuml">
-<span class="md-ellipsis">
-      🧩 Arquitetura Backend (PlantUML)
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#alternativa-com-mermaid-diagrama-funcional-svg">
-<span class="md-ellipsis">
-      🧠 Alternativa com Mermaid - Diagrama Funcional (SVG)
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../diagramas/casos_uso/">
+<a class="md-nav__link" href="../casos_uso/">
 <span class="md-ellipsis">
     Casos de Uso
     
@@ -296,7 +264,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../diagramas/diagrama_classes/">
+<a class="md-nav__link" href="../diagrama_classes/">
 <span class="md-ellipsis">
     Diagrama de Classes
     
@@ -304,7 +272,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../api/">
+<a class="md-nav__link" href="../../api/">
 <span class="md-ellipsis">
     API e Modelos
     
@@ -330,7 +298,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../reference/">
+<a class="md-nav__link" href="../../../reference/">
 <span class="md-ellipsis">
     Módulos Python
     
@@ -356,7 +324,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../changelog/">
+<a class="md-nav__link" href="../../../changelog/">
 <span class="md-ellipsis">
     Histórico de Versões
     
@@ -364,7 +332,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../cobertura/index.html">
+<a class="md-nav__link" href="../../../cobertura/index.html">
 <span class="md-ellipsis">
     Cobertura de Testes
     
@@ -383,49 +351,34 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Índice" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Índice
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#arquitetura-backend-plantuml">
-<span class="md-ellipsis">
-      🧩 Arquitetura Backend (PlantUML)
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#alternativa-com-mermaid-diagrama-funcional-svg">
-<span class="md-ellipsis">
-      🧠 Alternativa com Mermaid - Diagrama Funcional (SVG)
-    </span>
-</a>
-</li>
-</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="estrutura-do-projeto">Estrutura do Projeto<a class="headerlink" href="#estrutura-do-projeto" title="Permanent link">¶</a></h1>
-<div class="highlight"><pre><span></span><code>your-cross/
-├── pyproject.toml      ← Gerenciador de dependências e configurações do projeto
-├── mkdocs.yml          ← Configurações da documentação
-├── src/
-│   ├── config/         ← Projeto Django
-│   └── your_cross/     ← Pacote do sistema
-├── tests/              ← Testes automatizados
-├── docs/               ← Documentação do projeto
-└── .venv/              ← Ambiente virtual (via poetry)
+<h1 id="diagrama-da-arquitetura-backend-mermaid">Diagrama da Arquitetura Backend (Mermaid)<a class="headerlink" href="#diagrama-da-arquitetura-backend-mermaid" title="Permanent link">¶</a></h1>
+<div class="highlight"><pre><span></span><code>flowchart TD
+    Config[config (core Django)]
+    Alunos[alunos]
+    Professores[professores]
+    Treinos[treinos]
+    Financeiro[financeiro]
+    Autenticacao[autenticacao]
+    Utils[utils]
+
+    Config --&gt; Alunos
+    Config --&gt; Professores
+    Config --&gt; Treinos
+    Config --&gt; Financeiro
+    Config --&gt; Autenticacao
+
+    Treinos --&gt; Alunos
+    Treinos --&gt; Professores
+    Alunos --&gt; Financeiro
+    Financeiro --&gt; Autenticacao
+    Autenticacao --&gt; Utils
 </code></pre></div>
-<hr/>
-<h2 id="arquitetura-backend-plantuml">🧩 Arquitetura Backend (PlantUML)<a class="headerlink" href="#arquitetura-backend-plantuml" title="Permanent link">¶</a></h2>
-<p><a href="https://editor.plantuml.com/uml/RP11QiD034NtSueX-zmWc9Js08MkIl52J6KpoLWoacPHIa_JHG-IYpMb7YS2UwVt_VqVFgg1M9rAq7Ec6GIcE4CwmuWlzb4m2YO36Wk6iF2uUnO-eN5yEbqJtiNF4A_FMs8QyjZ7mq7HBDEeNHU-xdeFSya9BZ-NRuwlNELHM7MjGwd4slyVi_20gYpOY0dcMpva0agOXHS0rP0i9qZGKBLSjFypMDNs-suTyjGlkgXDU-mTVE9bGblSgBLFUpEFlTfTVtFDdSiRovyu8htNgVm2"><img alt="Arquitetura Backend" src="https://img.plantuml.biz/plantuml/svg/RP11QiD034NtSueX-zmWc9Js08MkIl52J6KpoLWoacPHIa_JHG-IYpMb7YS2UwVt_VqVFgg1M9rAq7Ec6GIcE4CwmuWlzb4m2YO36Wk6iF2uUnO-eN5yEbqJtiNF4A_FMs8QyjZ7mq7HBDEeNHU-xdeFSya9BZ-NRuwlNELHM7MjGwd4slyVi_20gYpOY0dcMpva0agOXHS0rP0i9qZGKBLSjFypMDNs-suTyjGlkgXDU-mTVE9bGblSgBLFUpEFlTfTVtFDdSiRovyu8htNgVm2"/></a></p>
-<hr/>
-<h2 id="alternativa-com-mermaid-diagrama-funcional-svg">🧠 Alternativa com Mermaid - Diagrama Funcional (SVG)<a class="headerlink" href="#alternativa-com-mermaid-diagrama-funcional-svg" title="Permanent link">¶</a></h2>
-<p><img alt="Diagrama da arquitetura" src="../diagramas/arquitetura_backend.svg"/></p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
@@ -449,11 +402,11 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.expand", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
-<script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
-<script src="../../stylesheets/javascripts/extra.js"></script>
-<script src="../../assets/mkdocs_puml/puml.js"></script>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.expand", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+<script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+<script src="../../../stylesheets/javascripts/extra.js"></script>
+<script src="../../../assets/mkdocs_puml/puml.js"></script>
 <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
-<script src="../../assets/mkdocs_puml/interaction.js"></script>
+<script src="../../../assets/mkdocs_puml/interaction.js"></script>
 </body>
 </html>

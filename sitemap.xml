@@ -2,34 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://your-cross.localhost/</loc>
-         <lastmod>2025-06-07</lastmod>
+         <lastmod>2025-06-09</lastmod>
     </url>
     <url>
          <loc>https://your-cross.localhost/changelog/</loc>
-         <lastmod>2025-06-07</lastmod>
+         <lastmod>2025-06-09</lastmod>
     </url>
     <url>
          <loc>https://your-cross.localhost/guia/comandos/</loc>
-         <lastmod>2025-06-07</lastmod>
+         <lastmod>2025-06-09</lastmod>
     </url>
     <url>
          <loc>https://your-cross.localhost/guia/instalacao/</loc>
-         <lastmod>2025-06-07</lastmod>
+         <lastmod>2025-06-09</lastmod>
     </url>
     <url>
          <loc>https://your-cross.localhost/reference/yourcross.core/</loc>
-         <lastmod>2025-06-07</lastmod>
+         <lastmod>2025-06-09</lastmod>
     </url>
     <url>
          <loc>https://your-cross.localhost/reference/yourcross.treinos/</loc>
-         <lastmod>2025-06-07</lastmod>
+         <lastmod>2025-06-09</lastmod>
     </url>
     <url>
          <loc>https://your-cross.localhost/tech/api/</loc>
-         <lastmod>2025-06-07</lastmod>
+         <lastmod>2025-06-09</lastmod>
     </url>
     <url>
          <loc>https://your-cross.localhost/tech/estrutura/</loc>
-         <lastmod>2025-06-07</lastmod>
+         <lastmod>2025-06-09</lastmod>
+    </url>
+    <url>
+         <loc>https://your-cross.localhost/tech/diagramas/arquitetura_backend/</loc>
+         <lastmod>2025-06-09</lastmod>
+    </url>
+    <url>
+         <loc>https://your-cross.localhost/tech/diagramas/casos_uso/</loc>
+         <lastmod>2025-06-09</lastmod>
+    </url>
+    <url>
+         <loc>https://your-cross.localhost/tech/diagramas/diagrama_classes/</loc>
+         <lastmod>2025-06-09</lastmod>
+    </url>
+    <url>
+         <loc>https://your-cross.localhost/tech/diagramas/mer/</loc>
+         <lastmod>2025-06-09</lastmod>
     </url>
 </urlset>
