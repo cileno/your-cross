@@ -1,4 +1,3 @@
-# Gerar um arquivo mkdocs.yml válido e corrigido no formato correto
 site_name: Your Cross
 site_url: https://your-cross.localhost/
 repo_url: https://github.com/cileno/your-cross
@@ -31,16 +30,20 @@ theme:
       accent: amber
 
 nav:
-  - Início: index.md
-  - Guia de Uso:
+  - 🔰️ Início: index.md
+  - 🗺️ Guia de Uso:
       - Instalação: guia/instalacao.md
       - Comandos: guia/comandos.md
-  - Documentação Técnica:
+  - 🗃️ Documentação Técnica:
       - Estrutura do Projeto: tech/estrutura.md
+      - Casos de Uso: tech/diagramas/casos_uso.md
+      - Diagrama de Classes: tech/diagramas/diagrama_classes.md
       - API e Modelos: tech/api.md
-  - Referência do Código:
+  - 👨‍💻️ Referência do Código:
       - Módulos Python: reference/
-  - Histórico de Versões: changelog.md
+  - 📎 Extras:
+    - Histórico de Versões: changelog.md
+    - Cobertura de Testes: cobertura/index.html
 
 plugins:
   - search
@@ -56,6 +59,9 @@ plugins:
   - gen-files:
       scripts:
         - docs/gen_reference.py
+  - plantuml:
+      puml_url: https://www.plantuml.com/plantuml/
+  - mermaid2
 
 markdown_extensions:
   - attr_list
@@ -70,6 +76,10 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.emoji
   - pymdownx.snippets
+  - pymdownx.magiclink
+  - pymdownx.tasklist
+  - pymdownx.mark
+  - pymdownx.arithmatex
 
 extra_css:
   - stylesheets/css/extra.css

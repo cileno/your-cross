@@ -1,0 +1,23 @@
+# 🎯 Diagrama de Classes
+
+Este diagrama representa as principais entidades do sistema Your Cross e os relacionamentos entre elas, com foco na modelagem do domínio da aplicação. Ele é útil para compreender a estrutura de classes e pacotes, além de ilustrar responsabilidades, dependências e colaborações entre os componentes do backend.
+
+As principais áreas cobertas incluem:
+
+    👤 Gestão de pessoas: entidades como Aluno, Professor e Secretaria.
+
+    🏋️ Treinamento: Treinos, Exercícios, Avaliações Físicas.
+
+    💰 Financeiro: Contratos, Planos, Pagamentos e Mensalidades.
+
+    🔐 Autenticação: controle de acesso e login.
+
+    ⚙️ Utilitários: serviços e componentes auxiliares.
+
+Este diagrama serve como referência técnica para desenvolvedores e arquitetos de software, facilitando a comunicação e manutenção do projeto.
+
+[![Diagrama de Classes](https://img.plantuml.biz/plantuml/svg/dLNDQXn74BxFKnHx2IJ8sDSXCHPo13u418u2EIsbdjAuSFyCLJKYFz73X1o23pdc2VR5ebatwjRqRiHwBmlVLrq_Nt_LqxrHGx4v-CxOFC5Rnb4m80m45nvLIU4CVawpm8KarKu_SfnGC83Qhvv0JTZj4nJ6BGVFpOHlPgDtBiNt_1l1owxx2hxR_-0ANJ9QgbphlFjJE6cckWdTHnm9De_C1dxl0E1ptkK02gS5oxzlUEZX-lhTsuB45AXVcYiG1MI_mfJY1rnXipSEQUlJoB670OsC0-tv-wxgutm875bDS4XIuU_92HaAOmLUIRebrIHrswGJEKRF0mvLj_Tr4J_79wCEQBYDg8u3HKkV6ooqaQVR59lPuq12Bgt7DxHP3rV-YPKDez5-vaVLl_tZx6mrUaCN1Hgk2D5I-rbRk3HoVz10FmfnnBqQZOKgxgc9ziGp7ZAssQyb6qYTiCCAB_V2aHsNEwcfMmuPRupq_IyaZjqNM7gKUKhRCAkRFSgA59h8s2NI7ZXQRNhX0gvTFQ6G_t1oBuqm9N7MUlDg0m_NkVbwKqtSWqlHTfy2l5vY2_CO_lB5YrURqbOFis8EBajLSkTgIsBX79Ytw52GaACRWjT7l7L-Xvvnz_VkNshVfqVohmINkt-K7JunMJxjC5toGXwJjBXaxPo9DFLmwnDQ0T7RBDZ04ucZQ3FwxPXaE1IIRfJa3XTBD9TKThRIgPcW1mfiT4pMDdnAgZCVrlUI8qP7BEtU5kgfebSUu-dMd8HSg-CYaSEq3QH7j-4YHHEquoLFt_tsvMsg_a1HyrVX_mlVKJpo7RX3dwGU-VcgLpZcL_Gadnwl5iZIq3m7ZMkAo3sWAiUyjGNFiGz_sG0ztA0I3WaeDC4bSQrZ3oD9pbmJgtUcYD33xXDCE29CIVAvmYxfSqlLvlGWDERlOZxsCFGRYiCS_7y0)](https://editor.plantuml.com/uml/dLNDQXn74BxFKnHx2IJ8sDSXCHPo13u418u2EIsbdjAuSFyCLJKYFz73X1o23pdc2VR5ebatwjRqRiHwBmlVLrq_Nt_LqxrHGx4v-CxOFC5Rnb4m80m45nvLIU4CVawpm8KarKu_SfnGC83Qhvv0JTZj4nJ6BGVFpOHlPgDtBiNt_1l1owxx2hxR_-0ANJ9QgbphlFjJE6cckWdTHnm9De_C1dxl0E1ptkK02gS5oxzlUEZX-lhTsuB45AXVcYiG1MI_mfJY1rnXipSEQUlJoB670OsC0-tv-wxgutm875bDS4XIuU_92HaAOmLUIRebrIHrswGJEKRF0mvLj_Tr4J_79wCEQBYDg8u3HKkV6ooqaQVR59lPuq12Bgt7DxHP3rV-YPKDez5-vaVLl_tZx6mrUaCN1Hgk2D5I-rbRk3HoVz10FmfnnBqQZOKgxgc9ziGp7ZAssQyb6qYTiCCAB_V2aHsNEwcfMmuPRupq_IyaZjqNM7gKUKhRCAkRFSgA59h8s2NI7ZXQRNhX0gvTFQ6G_t1oBuqm9N7MUlDg0m_NkVbwKqtSWqlHTfy2l5vY2_CO_lB5YrURqbOFis8EBajLSkTgIsBX79Ytw52GaACRWjT7l7L-Xvvnz_VkNshVfqVohmINkt-K7JunMJxjC5toGXwJjBXaxPo9DFLmwnDQ0T7RBDZ04ucZQ3FwxPXaE1IIRfJa3XTBD9TKThRIgPcW1mfiT4pMDdnAgZCVrlUI8qP7BEtU5kgfebSUu-dMd8HSg-CYaSEq3QH7j-4YHHEquoLFt_tsvMsg_a1HyrVX_mlVKJpo7RX3dwGU-VcgLpZcL_Gadnwl5iZIq3m7ZMkAo3sWAiUyjGNFiGz_sG0ztA0I3WaeDC4bSQrZ3oD9pbmJgtUcYD33xXDCE29CIVAvmYxfSqlLvlGWDERlOZxsCFGRYiCS_7y0)
+
+
+
+O diagrama é renderizado como imagem usando PlantUML Server, garantindo compatibilidade com GitHub Pages.

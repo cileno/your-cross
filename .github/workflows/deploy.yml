@@ -11,7 +11,7 @@ permissions:
   contents: write
 
 jobs:
-  deploy:
+  docs-deploy:
     name: 🚀 Deploy para GitHub Pages
     runs-on: ubuntu-latest
 
@@ -27,6 +27,11 @@ jobs:
       - name: 🐍 Instala o Poetry
         uses: snok/install-poetry@v1
 
+      - name: 📦 Instala dependências com cache
+        uses: abatilo/actions-poetry@v2
+        with:
+          poetry-version: "1.7.1"
+      
       - name: 📦 Instala dependências com Poetry
         run: |
           poetry install --no-root

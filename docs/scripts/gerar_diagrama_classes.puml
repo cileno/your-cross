@@ -1,0 +1,118 @@
+@startuml
+title Diagrama de Classes - Your Cross
+skinparam style strictuml
+skinparam classAttributeIconSize 0
+
+' ====== Pacote de Usuários ======
+package "Usuários" {
+    class Usuario {
+        +id: UUID
+        +nome: str
+        +email: str
+        +senha: str
+        +ultimo_login: datetime
+    }
+
+    class Administrador
+    class Secretaria
+    class Professor {
+        +especialidade: str
+    }
+    class Aluno {
+        +data_nascimento: date
+        +telefone: str
+        +endereco: str
+        +status: str
+    }
+    class Visitante
+
+    Usuario <|-- Administrador
+    Usuario <|-- Secretaria
+    Usuario <|-- Professor
+    Usuario <|-- Aluno
+    Usuario <|-- Visitante
+}
+
+' ====== Pacote de Treinamento ======
+package "Treinamento" {
+    class Treino {
+        +id: UUID
+        +titulo: str
+        +descricao: str
+        +data_inicio: date
+        +data_fim: date
+    }
+
+    class Exercicio {
+        +id: UUID
+        +nome: str
+        +grupo_muscular: str
+        +repeticoes: int
+        +series: int
+    }
+
+    class Aparelho {
+        +id: UUID
+        +nome: str
+        +descricao: str
+    }
+
+    Treino "1" -- "*" Exercicio : contém >
+    Exercicio "1" -- "0..1" Aparelho : usa >
+    Professor "1" -- "*" Treino : cria >
+    Aluno "1" -- "*" Treino : recebe >
+}
+
+' ====== Pacote de Avaliações ======
+package "Avaliação Física" {
+    class AvaliacaoFisica {
+        +id: UUID
+        +data: date
+        +peso: float
+        +altura: float
+        +percentual_gordura: float
+        +observacoes: str
+    }
+
+    Secretaria "1" -- "*" AvaliacaoFisica : emite >
+    Aluno "1" -- "*" AvaliacaoFisica : possui >
+}
+
+' ====== Pacote Financeiro ======
+package "Financeiro" {
+    class Plano {
+        +id: UUID
+        +nome: str
+        +preco: float
+        +duracao_meses: int
+    }
+
+    class Contrato {
+        +id: UUID
+        +data_inicio: date
+        +data_fim: date
+        +status: str
+    }
+
+    class Mensalidade {
+        +id: UUID
+        +vencimento: date
+        +valor: float
+        +status: str
+    }
+
+    class Pagamento {
+        +id: UUID
+        +data: date
+        +valor: float
+        +metodo: str
+    }
+
+    Aluno "1" -- "*" Contrato : assina >
+    Contrato "1" -- "1" Plano : baseado em >
+    Contrato "1" -- "*" Mensalidade : gera >
+    Mensalidade "1" -- "0..1" Pagamento : é paga por >
+    Pagamento "*" -- "1" Secretaria : registrado por >
+}
+
+@enduml

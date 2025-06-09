@@ -34,17 +34,17 @@ flake8 = "^7.2.0"
 black = "^25.1.0"
 mypy = "^1.16.0"
 pre-commit = "^4.2.0"
-mkdocstrings = {extras = ["python"], version = "^0.29.1"}
-mkdocs-gen-files = "^0.5.0"
-mkdocs-autorefs = "^1.4.2"
+pytest-cov = "^6.1.1"
 
 [tool.poetry.group.docs.dependencies]
 mkdocs = "^1.5.3"
 mkdocs-material = "^9.5.14"
 mkdocstrings = {extras = ["python"], version = "^0.29.1"}
-mkdocs-autorefs = "^1.0.1"
+mkdocs-autorefs = "^1.4.2"
 mkdocs-include-markdown-plugin = "^7.1.5"
 mkdocs-gen-files = "^0.5.0"
+mkdocs-puml = "^2.3.0"
+mkdocs-mermaid2-plugin = "^1.2.1"
 
 [tool.isort]
 profile = "black"
@@ -65,15 +65,16 @@ lint.ignore = ["E501"]
 # 🎯 Tarefas automatizadas com Taskipy
 [tool.taskipy.tasks]
 
-# 🧹 Formatação e lint do código Python (isort, blue, ruff)
-# lint = "isort . && blue . && ruff check ."
+    # 🧹 Formatação e lint do código Python (isort, blue, ruff)
+    # lint = "isort . && blue . && ruff check ."
 lint = "isort . && black . && ruff check ."
 
-# 🧪 Roda os testes com pytest e configuração django
+    # 🧪 Roda os testes com pytest e configuração django
 test = "pytest --ds=config.settings"
 
-# 🧾 Gera o relatório de cobertura dos testes
+    # 🧾 Gera o relatório de cobertura dos testes
 coverage = "coverage run -m pytest && coverage report -m"
+coverage-html = "coverage html -d docs/cobertura"
 
 # 📚 Roda o servidor local da documentação MkDocs
 docs = "mkdocs serve"

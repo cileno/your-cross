@@ -1,0 +1,44 @@
+@startuml
+
+!theme plain
+
+left to right direction
+actor Administrador
+actor Secretaria
+actor Professor
+actor Aluno
+actor Visitante
+
+package "Gestão de Pessoas" {
+  Administrador --> (Gerenciar Colaboradores)
+  Secretaria --> (Cadastrar Aluno)
+  Secretaria --> (Emitir Contrato)
+  Secretaria --> (Criar Avaliação Física)
+  Secretaria --> (Emitir Relatórios)
+  Aluno --> (Atualizar Dados Pessoais)
+}
+
+package "Treinamento" {
+  Professor --> (Criar Treino)
+  Professor --> (Associar Exercícios ao Treino)
+  Professor --> (Cadastrar Aparelhos)
+  Aluno --> (Visualizar Treino)
+  Aluno --> (Visualizar Avaliação Física)
+}
+
+package "Financeiro" {
+  Secretaria --> (Gerenciar Planos)
+  Secretaria --> (Emitir Mensalidade)
+  Secretaria --> (Registrar Pagamento)
+  Administrador --> (Visualizar Relatórios Financeiros)
+  Aluno --> (Ver Mensalidades)
+}
+
+package "Acesso ao Sistema" {
+  Visitante --> (Visualizar Página Pública)
+  Aluno --> (Login)
+  Professor --> (Login)
+  Secretaria --> (Login)
+  Administrador --> (Login)
+}
+@enduml

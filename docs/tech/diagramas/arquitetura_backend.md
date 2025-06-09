@@ -1,0 +1,24 @@
+# Diagrama da Arquitetura Backend (Mermaid)
+
+```mermaid
+flowchart TD
+    Config[config (core Django)]
+    Alunos[alunos]
+    Professores[professores]
+    Treinos[treinos]
+    Financeiro[financeiro]
+    Autenticacao[autenticacao]
+    Utils[utils]
+
+    Config --> Alunos
+    Config --> Professores
+    Config --> Treinos
+    Config --> Financeiro
+    Config --> Autenticacao
+
+    Treinos --> Alunos
+    Treinos --> Professores
+    Alunos --> Financeiro
+    Financeiro --> Autenticacao
+    Autenticacao --> Utils
+```
